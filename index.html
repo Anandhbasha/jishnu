@@ -149,11 +149,33 @@
         // // d%=3
         // // // console.log(d);        
         // ternary
-        let age = 18
-        console.log(age>=18?"Eligible":"Not Eligible");
+        // let age = 18
+        // console.log(age>=18?"Eligible":"Not Eligible");
+        let arr = [10,20,30,40]
+        // console.log(arr[0]);
+        // console.log(arr[1]);
+        // console.log(arr[2]);
+        // console.log(arr[3]);
         
-        //mrf(map,reduce,filter)->array methods        
+        // for(let x=0;x<4;x++){
+        //     console.log(arr[x]);
+            
+        // }
+        
+        //mrf(map,reduce,filter)->array methods
+        arr.map((item)=>console.log(item) )
+        div3 = arr.filter((item)=>item%3===0)
+        console.log(div3);
+        total = arr.reduce((x,y)=>x+y)
+        console.log(total);
+        
+        
         //return
+        function add(a,b){
+            return (a+b);            
+        }
+        console.log(add(10,50));
+        
         //export 
         //import
         //async
