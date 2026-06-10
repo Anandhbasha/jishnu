@@ -1,7 +1,10 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useState } from "react";
 //npm install @react-navigation/native-stack
 //npx expo install react-native-screens react-native-safe-area-context
 //npm install react-native-screens react-native-safe-area-context
+// npm install @react-native-async-storage/async-storage
+// npx expo install @react-native-async-storage/async-storage
 import {
   View,
   Text,
@@ -16,7 +19,9 @@ const Login = ({ navigation }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = () => {
+  const handleLogin = async() => {
+// saveuser 
+    await AsyncStorage.setItem("user",username)
 
     if (username === "admin" && password === "1234") {
 

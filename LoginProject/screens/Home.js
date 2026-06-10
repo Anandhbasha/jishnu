@@ -1,22 +1,37 @@
-import React from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import React, { useEffect, useState } from "react";
 
 import {
   View,
   Text,
-  StyleSheet
+  StyleSheet,
+  Button
 } from "react-native";
 
-const Home = ({ route }) => {
+const Home = ({ navigation }) => {
 
-  const { username } = route.params;
+  const[user,setUser] = useState("")
 
+  useEffect(()=>{
+    getUser()
+  },[])
+  const getUser = async()=>{
+    const userName = await AsyncStorage.getItem("user")
+    setUser(userName)
+  }
+  const logout = async()=>{
+    await AsyncStorage.removeItem("user")
+    navigation.navigate("Login")
+  }
   return (
 
     <View style={styles.container}>
 
       <Text style={styles.text}>
-        Welcome {username}
+        Welcome {user}
       </Text>
+      <Text>This is Next Logout</Text>
+      <Button title="Logout" onPress={logout}></Button>
 
     </View>
 

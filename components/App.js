@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import Buttons from './Buttons';
 
 export default function App() {
+
   return (
     <View style={styles.container}>
       <Buttons/>
